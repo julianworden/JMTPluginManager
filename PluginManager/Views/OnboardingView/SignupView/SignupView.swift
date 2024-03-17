@@ -70,10 +70,6 @@ struct SignupView: View {
             .buttonStyle(PrimaryButtonStyle())
         }
         .padding(50)
-        .basicErrorAlert(
-            message: viewModel.errorAlertMessage,
-            isPresented: $viewModel.errorAlertIsShowing
-        )
     }
 }
 

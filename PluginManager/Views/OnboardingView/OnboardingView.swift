@@ -36,6 +36,10 @@ struct OnboardingView: View {
             }
         }
         .ignoresSafeArea()
+        .basicErrorAlert(
+            message: viewModel.errorAlertMessage,
+            isPresented: $viewModel.errorAlertIsShowing
+        )
     }
 }
 

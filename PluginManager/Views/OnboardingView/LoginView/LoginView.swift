@@ -47,10 +47,6 @@ struct LoginView: View {
             }
         }
         .padding(50)
-        .basicErrorAlert(
-            message: viewModel.errorAlertMessage,
-            isPresented: $viewModel.errorAlertIsShowing
-        )
     }
 }
 
