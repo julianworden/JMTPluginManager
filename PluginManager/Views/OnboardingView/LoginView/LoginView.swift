@@ -30,12 +30,10 @@ struct LoginView: View {
                 }
                 .buttonStyle(.plain)
                 
-                Button {
+                Button("Log In") {
                     Task {
                         await viewModel.logIn()
                     }
-                } label: {
-                    Text("Log In")
                 }
                 .buttonStyle(PrimaryButtonStyle())
                 
@@ -49,6 +47,10 @@ struct LoginView: View {
             }
         }
         .padding(50)
+        .basicErrorAlert(
+            message: viewModel.errorAlertMessage,
+            isPresented: $viewModel.errorAlertIsShowing
+        )
     }
 }
 

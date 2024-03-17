@@ -11,6 +11,72 @@ struct SignupView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
-        Text("HELLO")
+        VStack(spacing: 10) {
+            Text("Sign Up")
+                .font(.largeTitle.bold())
+            
+            VStack(alignment: .leading) {
+                TextField("Email Address", text: $viewModel.signupEmailAddress)
+                    .textFieldStyle(MainTextFieldStyle())
+                
+                Text("We will send a verification email to this email address")
+                    .textFieldCaption()
+                
+                TextField("Confirm Email Address", text: $viewModel.signupConfirmEmailAddress)
+                    .textFieldStyle(MainTextFieldStyle())
+                
+                TextFieldStatusView(
+                    inputIsValid: $viewModel.signupEmailsMatch,
+                    validMessage: "Email addresses match.",
+                    invalidMessage: "Email addresses do not match."
+                )
+                
+                SecureField("Password", text: $viewModel.signupPassword)
+                    .textFieldStyle(MainTextFieldStyle())
+                
+                TextFieldStatusView(
+                    inputIsValid: $viewModel.signupPasswordIsLongEnough,
+                    validMessage: "Includes at least 6 characters.",
+                    invalidMessage: "Does not include at least 6 characters."
+                )
+                
+                TextFieldStatusView(
+                    inputIsValid: $viewModel.signupPasswordContainsSpecialCharacter,
+                    validMessage: "Includes at least 1 special character (!, @, #, etc.)",
+                    invalidMessage: "Does not include at least 1 special character (!, @, #, etc.)"
+                )
+                
+                TextFieldStatusView(
+                    inputIsValid: $viewModel.signupPasswordContainsUpperAndLowercase,
+                    validMessage: "Includes uppercase and lowercase letters.",
+                    invalidMessage: "Does not include uppercase and lowercase letters."
+                )
+                
+                SecureField("Confirm Password", text: $viewModel.signupConfirmPassword)
+                    .textFieldStyle(MainTextFieldStyle())
+                
+                TextFieldStatusView(
+                    inputIsValid: $viewModel.signupPasswordsMatch,
+                    validMessage: "Passwords match.",
+                    invalidMessage: "Passwords do not match."
+                )
+            }
+            
+            Button("Sign Up") {
+                Task {
+                    await viewModel.createAccount()
+                }
+            }
+            .buttonStyle(PrimaryButtonStyle())
+        }
+        .padding(50)
+        .basicErrorAlert(
+            message: viewModel.errorAlertMessage,
+            isPresented: $viewModel.errorAlertIsShowing
+        )
     }
+}
+
+#Preview {
+    SignupView(viewModel: OnboardingViewModel(authService: AuthService()))
 }

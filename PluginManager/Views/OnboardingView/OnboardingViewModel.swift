@@ -13,16 +13,62 @@ final class OnboardingViewModel: ObservableObject {
         case login, signup, forgotPassword
     }
     
-    enum LoginViewState {
+    enum ViewState {
         case displayingVew, error(message: String)
     }
     
     @Published var mode = OnboardingViewMode.login
-    @Published var viewState = LoginViewState.displayingVew
+    @Published var viewState = ViewState.displayingVew {
+        didSet {
+            switch viewState {
+            case .error(let message):
+                errorAlertMessage = message
+                errorAlertIsShowing = true
+            default:
+                break
+            }
+        }
+    }
     @Published var forgotPasswordViewIsShowing = false
     
+    // SignupView TextFields
     @Published var loginEmailAddress = ""
     @Published var loginPassword = ""
+    @Published var signupEmailAddress = "" {
+        didSet {
+            checkIfSignupEmailsMatch()
+        }
+    }
+    @Published var signupConfirmEmailAddress = "" {
+        didSet {
+            checkIfSignupEmailsMatch()
+        }
+    }
+    @Published var signupEmailsMatch = false
+    @Published var signupPassword = "" {
+        didSet {
+            checkIfSignupPasswordIsValid()
+            checkIfSignupPasswordsMatch()
+        }
+    }
+    @Published var signupConfirmPassword = "" {
+        didSet {
+            checkIfSignupPasswordsMatch()
+        }
+    }
+    @Published var signupPasswordIsLongEnough = false
+    @Published var signupPasswordContainsSpecialCharacter = false
+    @Published var signupPasswordContainsUpperAndLowercase = false
+    @Published var signupPasswordsMatch = false
+    
+    @Published var errorAlertIsShowing = false
+    var errorAlertMessage = ""
+    
+    var signupPasswordIsValid: Bool {
+        return signupPasswordIsLongEnough &&
+        signupPasswordContainsSpecialCharacter &&
+        signupPasswordContainsUpperAndLowercase
+    }
     
     let authService: AuthServiceProtocol
     
@@ -32,9 +78,38 @@ final class OnboardingViewModel: ObservableObject {
     
     func createAccount() async {
         do {
-            try await authService.signUp(withEmail: loginEmailAddress, andPassword: loginPassword)
+            guard signupPasswordIsValid else {
+                viewState = .error(message: ErrorMessageConstants.invalidPasswordOnSignUp)
+                return
+            }
+            
+            guard signupPasswordsMatch else {
+                viewState = .error(message: ErrorMessageConstants.passwordsDoNotMatch)
+                return
+            }
+            
+            guard signupEmailsMatch else {
+                viewState = .error(message: ErrorMessageConstants.emailAddressesDoNotMatch)
+                return
+            }
+            
+            try await authService.signUp(withEmail: signupEmailAddress, andPassword: signupPassword)
         } catch {
-            print("❌ Error creating account: \(error)")
+            let error = AuthErrorCode(_nsError: error as NSError)
+            
+            switch error.code {
+            case .invalidEmail, .missingEmail:
+                viewState = .error(message: ErrorMessageConstants.invalidEmailAddress)
+            case .emailAlreadyInUse:
+                viewState = .error(message: ErrorMessageConstants.emailAlreadyInUseOnSignUp)
+            case .networkError:
+                viewState = .error(message: "\(ErrorMessageConstants.networkErrorOnSignUp). System error: \(error.localizedDescription)")
+            case .weakPassword:
+                viewState = .error(message: ErrorMessageConstants.invalidPasswordOnSignUp)
+                print("ERROR: \("❌ \(error)")")
+            default:
+                viewState = .error(message: "\(ErrorMessageConstants.unknownError). System error: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -48,12 +123,12 @@ final class OnboardingViewModel: ObservableObject {
             case .invalidEmail:
                 viewState = .error(message: ErrorMessageConstants.invalidEmailAddress)
             case .networkError:
-                viewState = .error(message: "\(ErrorMessageConstants.networkErrorOnSignIn). System error: \(error.localizedDescription)")
+                viewState = .error(message: "\(ErrorMessageConstants.networkErrorOnLogIn). System error: \(error.localizedDescription)")
             case .wrongPassword:
-                viewState = .error(message: ErrorMessageConstants.wrongPasswordOnSignIn)
+                viewState = .error(message: ErrorMessageConstants.wrongPasswordOnLogIn)
             case .userNotFound:
                 // Password and email are valid, but no registered user has this info
-                viewState = .error(message: ErrorMessageConstants.userNotFoundOnSignIn)
+                viewState = .error(message: ErrorMessageConstants.userNotFoundOnLogIn)
             default:
                 viewState = .error(message: "\(ErrorMessageConstants.unknownError). System error: \(error.localizedDescription)")
             }
@@ -66,5 +141,29 @@ final class OnboardingViewModel: ObservableObject {
         } catch {
             print("❌ Error logging out: \(error)")
         }
+    }
+    
+    func checkIfSignupEmailsMatch() {
+        guard !signupConfirmEmailAddress.isEmpty else {
+            signupEmailsMatch = false
+            return
+        }
+        
+        signupEmailsMatch = (signupEmailAddress == signupConfirmEmailAddress)
+    }
+    
+    func checkIfSignupPasswordIsValid() {
+        signupPasswordIsLongEnough = (signupPassword.count >= 6)
+        signupPasswordContainsSpecialCharacter = signupPassword.containsSpecialCharacter
+        signupPasswordContainsUpperAndLowercase = signupPassword.containsUpperAndLowercaseCharacters
+    }
+    
+    func checkIfSignupPasswordsMatch() {
+        guard !signupConfirmPassword.isEmpty else {
+            signupPasswordsMatch = false
+            return
+        }
+        
+        signupPasswordsMatch = (signupPassword == signupConfirmPassword)
     }
 }

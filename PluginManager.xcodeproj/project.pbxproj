@@ -16,6 +16,10 @@
 		AB2C437E2BA7402A005160D2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C437D2BA7402A005160D2 /* OnboardingView.swift */; };
 		AB2C43802BA7403E005160D2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C437F2BA7403E005160D2 /* OnboardingViewModel.swift */; };
 		AB2C43872BA745BD005160D2 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C43862BA745BD005160D2 /* PrimaryButtonStyle.swift */; };
+		AB2C438C2BA7517B005160D2 /* TextFieldCaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C438B2BA7517B005160D2 /* TextFieldCaption.swift */; };
+		AB2C438E2BA75316005160D2 /* TextFieldStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C438D2BA75316005160D2 /* TextFieldStatusView.swift */; };
+		AB2C43912BA75D4D005160D2 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C43902BA75D4D005160D2 /* String+Ext.swift */; };
+		AB2C43952BA7674C005160D2 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C43942BA7674C005160D2 /* Alerts.swift */; };
 		ABEDD9252BA60D3F00B316AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABEDD9242BA60D3F00B316AC /* GoogleService-Info.plist */; };
 		ABEDD9282BA60E3100B316AC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9272BA60E3100B316AC /* FirebaseAnalytics */; };
 		ABEDD92A2BA60E3100B316AC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9292BA60E3100B316AC /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -53,6 +57,10 @@
 		AB2C437D2BA7402A005160D2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		AB2C437F2BA7403E005160D2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		AB2C43862BA745BD005160D2 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		AB2C438B2BA7517B005160D2 /* TextFieldCaption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCaption.swift; sourceTree = "<group>"; };
+		AB2C438D2BA75316005160D2 /* TextFieldStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStatusView.swift; sourceTree = "<group>"; };
+		AB2C43902BA75D4D005160D2 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		AB2C43942BA7674C005160D2 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		ABEDD9242BA60D3F00B316AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABEDD94B2BA6149C00B316AC /* Scratch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scratch.swift; sourceTree = "<group>"; };
 		ABEDD94F2BA62C0E00B316AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +126,9 @@
 				ABEDD9562BA6864200B316AC /* Protocols */,
 				ABEDD94B2BA6149C00B316AC /* Scratch.swift */,
 				AB2C43832BA74501005160D2 /* Components */,
+				AB2C438F2BA75D42005160D2 /* Extensions */,
 				ABEDD9642BA6A58A00B316AC /* Styles */,
+				AB2C438A2BA7516C005160D2 /* ViewModifiers */,
 				ABEDD95B2BA69D7F00B316AC /* Utilities */,
 				AB2182EB2B9FEF04004DC899 /* Assets.xcassets */,
 				AB2182F02B9FEF04004DC899 /* PluginManager.entitlements */,
@@ -138,8 +148,26 @@
 		AB2C43832BA74501005160D2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AB2C438D2BA75316005160D2 /* TextFieldStatusView.swift */,
+				AB2C43942BA7674C005160D2 /* Alerts.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AB2C438A2BA7516C005160D2 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				AB2C438B2BA7517B005160D2 /* TextFieldCaption.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		AB2C438F2BA75D42005160D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB2C43902BA75D4D005160D2 /* String+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		ABEDD9542BA6860A00B316AC /* Views */ = {
@@ -322,16 +350,20 @@
 				AB2C43872BA745BD005160D2 /* PrimaryButtonStyle.swift in Sources */,
 				ABEDD94C2BA6149C00B316AC /* Scratch.swift in Sources */,
 				ABEDD9532BA62CF100B316AC /* AuthServiceProtocol.swift in Sources */,
+				AB2C43912BA75D4D005160D2 /* String+Ext.swift in Sources */,
 				AB2182EA2B9FEF03004DC899 /* LoginView.swift in Sources */,
 				AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */,
 				AB2182F92BA003DD004DC899 /* Plugin.swift in Sources */,
 				AB2C43802BA7403E005160D2 /* OnboardingViewModel.swift in Sources */,
+				AB2C438C2BA7517B005160D2 /* TextFieldCaption.swift in Sources */,
 				ABEDD9692BA6A84F00B316AC /* ForgotPasswordView.swift in Sources */,
 				AB2182F72BA0029B004DC899 /* Manufacturer.swift in Sources */,
 				ABEDD95D2BA69D9100B316AC /* ErrorMessageConstants.swift in Sources */,
 				ABEDD9662BA6A59000B316AC /* MainTextFieldStyle.swift in Sources */,
+				AB2C438E2BA75316005160D2 /* TextFieldStatusView.swift in Sources */,
 				AB2C437E2BA7402A005160D2 /* OnboardingView.swift in Sources */,
 				ABEDD9612BA69FC700B316AC /* SignupView.swift in Sources */,
+				AB2C43952BA7674C005160D2 /* Alerts.swift in Sources */,
 				ABEDD9512BA62CB200B316AC /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

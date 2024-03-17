@@ -16,12 +16,11 @@ struct OnboardingView: View {
     
     var body: some View {
         GeometryReader { geo in
-            HStack {
+            HStack(spacing: 0) {
                 Image(.computerScreen)
                     .resizable()
                     .frame(width: geo.size.width / 2, height: geo.size.height)
                     .scaledToFill()
-                
                 
                 Group {
                     switch viewModel.mode {
