@@ -71,6 +71,53 @@ struct Scratch: View {
                 }
             }
             
+            Button("Select Folder") {
+                let panel = NSOpenPanel()
+                panel.allowsMultipleSelection = false
+                panel.canChooseDirectories = true
+                panel.canChooseFiles = false
+                
+                if panel.runModal() == .OK {
+                    do {
+                        let folder = panel.urls[0]
+                        let contents = try FileManager.default.contentsOfDirectory(atPath: folder.path)
+                        folderContentURLs = contents.map { folder.appendingPathComponent($0) }
+                        FileManager.default.fileExists(atPath: "asdf")
+                        try FileManager.default.contentsOfDirectory(atPath: folderContentURLs.first!.path)
+                        fileNames = folderContentURLs.map { $0.pathComponents.last! }
+                        FileAttributeKey.appendOnly
+                        for url in folderContentURLs {
+                            let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
+                            var report: [String] = ["\(url.path)", ""]
+
+                            // 4
+                            for (key, value) in attributes {
+                              // ignore NSFileExtendedAttributes as it is a messy dictionary
+//                                  if key.rawValue == "NSFileExtendedAttributes" { continue }
+                              report.append("\(key.rawValue):\t \(value)")
+                            }
+                            
+                            fileAttributes = report
+                            print(fileAttributes)
+                            print("FILE SIZE: \(url.directorySize)")
+                            
+                            if url.absoluteString.contains(".aaxplugin") {
+                                let plistURL = url.appendingPathComponent("Contents").appendingPathComponent("Info.plist")
+                                print("PLIST AT: \(plistURL.absoluteString)")
+                                let dictionary = NSDictionary(contentsOf: plistURL)
+                                print(dictionary)
+                                // Plugin Name
+                                print("BUNDLE NAME: \(dictionary![kCFBundleNameKey])")
+                                // Plugin Version
+                                print("VERSION: \(dictionary![kCFBundleVersionKey])")
+                            }
+                        }
+                    } catch {
+                        print("ERROR: \(error)")
+                    }
+                }
+            }
+            
             
             // CHOOSE INDIVIDUAL FILE
     //            Text(filename)

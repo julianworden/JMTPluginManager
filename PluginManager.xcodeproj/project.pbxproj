@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0E48382BA7D5F300B5C3AD /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */; };
 		AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2182E72B9FEF03004DC899 /* PluginManagerApp.swift */; };
 		AB2182EA2B9FEF03004DC899 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2182E92B9FEF03004DC899 /* LoginView.swift */; };
 		AB2182EC2B9FEF04004DC899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2182EB2B9FEF04004DC899 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		AB2182E42B9FEF03004DC899 /* PluginManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluginManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2182E72B9FEF03004DC899 /* PluginManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginManagerApp.swift; sourceTree = "<group>"; };
 		AB2182E92B9FEF03004DC899 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				AB2C43902BA75D4D005160D2 /* String+Ext.swift */,
+				AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				AB2C43872BA745BD005160D2 /* PrimaryButtonStyle.swift in Sources */,
 				ABEDD94C2BA6149C00B316AC /* Scratch.swift in Sources */,
 				ABEDD9532BA62CF100B316AC /* AuthServiceProtocol.swift in Sources */,
+				AB0E48382BA7D5F300B5C3AD /* URL+Ext.swift in Sources */,
 				AB2C43912BA75D4D005160D2 /* String+Ext.swift in Sources */,
 				AB2182EA2B9FEF03004DC899 /* LoginView.swift in Sources */,
 				AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */,
