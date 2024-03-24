@@ -13,11 +13,13 @@ import SwiftUI
 struct PluginManagerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    let authService = AuthService()
+    init() {
+        FirebaseApp.configure()
+    }
     
     var body: some Scene {
         WindowGroup {
-            OnboardingView(authService: authService)
+            AppViewContainer()
         }
         .windowStyle(.hiddenTitleBar)
     }
@@ -25,6 +27,6 @@ struct PluginManagerApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
-        FirebaseApp.configure()
+        
     }
 }

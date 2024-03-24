@@ -51,7 +51,12 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(viewModel: OnboardingViewModel(authService: AuthService()))
-        .ignoresSafeArea()
-        .frame(width: 870, height: 580)
+    LoginView(
+        viewModel: OnboardingViewModel(
+            authService: AuthService(),
+            databaseService: DatabaseService()
+        )
+    )
+    .ignoresSafeArea()
+    .frame(width: 870, height: 580)
 }

@@ -10,8 +10,13 @@ import SwiftUI
 struct OnboardingView: View {
     @StateObject private var viewModel: OnboardingViewModel
     
-    init(authService: AuthServiceProtocol) {
-        _viewModel = StateObject(wrappedValue: OnboardingViewModel(authService: authService))
+    init(authService: AuthServiceProtocol, databaseService: DatabaseServiceProtocol) {
+        _viewModel = StateObject(
+            wrappedValue: OnboardingViewModel(
+                authService: authService,
+                databaseService: databaseService
+            )
+        )
     }
     
     var body: some View {
@@ -44,5 +49,5 @@ struct OnboardingView: View {
 }
 
 #Preview {
-    OnboardingView(authService: AuthService())
+    return OnboardingView(authService: AuthService(), databaseService: DatabaseService())
 }

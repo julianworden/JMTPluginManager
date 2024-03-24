@@ -14,7 +14,7 @@ final class OnboardingViewModel: ObservableObject {
     }
     
     enum ViewState {
-        case displayingVew, error(message: String)
+        case displayingVew, userIsSignedIn(user: User), error(message: String)
     }
     
     @Published var mode = OnboardingViewMode.login
@@ -71,9 +71,14 @@ final class OnboardingViewModel: ObservableObject {
     }
     
     let authService: AuthServiceProtocol
+    let databaseService: DatabaseServiceProtocol
     
-    init(authService: AuthServiceProtocol) {
+    init(
+        authService: AuthServiceProtocol,
+        databaseService: DatabaseServiceProtocol
+    ) {
         self.authService = authService
+        self.databaseService = databaseService
     }
     
     func createAccount() async {
@@ -93,7 +98,10 @@ final class OnboardingViewModel: ObservableObject {
                 return
             }
             
-            try await authService.signUp(withEmail: signupEmailAddress, andPassword: signupPassword)
+            let signupResult = try await authService.signUp(withEmail: signupEmailAddress, andPassword: signupPassword)
+            let newUser = User(uid: signupResult.user.uid, emailAddress: signupEmailAddress)
+            
+            try databaseService.createUser(newUser)
         } catch {
             let error = AuthErrorCode(_nsError: error as NSError)
             

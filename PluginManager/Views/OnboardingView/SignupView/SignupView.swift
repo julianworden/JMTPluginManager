@@ -74,5 +74,10 @@ struct SignupView: View {
 }
 
 #Preview {
-    SignupView(viewModel: OnboardingViewModel(authService: AuthService()))
+    SignupView(
+        viewModel: OnboardingViewModel(
+            authService: AuthService(),
+            databaseService: DatabaseService()
+        )
+    )
 }

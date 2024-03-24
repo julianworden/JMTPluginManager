@@ -8,17 +8,24 @@
 import FirebaseAuth
 
 final class AuthService: AuthServiceProtocol {
-    func signUp(withEmail emailAddress: String, andPassword password: String) async throws {
-        try await Auth.auth().createUser(withEmail: emailAddress, password: password)
+    let auth = Auth.auth()
+    
+    func signUp(withEmail emailAddress: String, andPassword password: String) async throws -> AuthDataResult {
+        let result = try await auth.createUser(withEmail: emailAddress, password: password)
+        return result
         // TODO: Handle Error
     }
     
     func logIn(withEmail emailAddress: String, andPassword password: String) async throws {
-        try await Auth.auth().signIn(withEmail: emailAddress, password: password)
+        try await auth.signIn(withEmail: emailAddress, password: password)
         // TODO: HANDLE ERROR
     }
     
     func logOut() throws {
-        try Auth.auth().signOut()
+        try auth.signOut()
+    }
+    
+    func getCurrentUser() -> FirebaseAuth.User? {
+        return auth.currentUser
     }
 }

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AB0E48382BA7D5F300B5C3AD /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */; };
+		AB12AB372BAD2C54000E8E43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB362BAD2C54000E8E43 /* User.swift */; };
+		AB12AB392BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */; };
+		AB12AB3B2BAD2CF9000E8E43 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB3A2BAD2CF9000E8E43 /* DatabaseService.swift */; };
+		AB12AB402BAD39C7000E8E43 /* InitialPluginScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB3F2BAD39C7000E8E43 /* InitialPluginScanningView.swift */; };
+		AB12AB422BAD3FFA000E8E43 /* AppViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB412BAD3FFA000E8E43 /* AppViewContainer.swift */; };
+		AB12AB442BAD4051000E8E43 /* AppViewContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB432BAD4051000E8E43 /* AppViewContainerViewModel.swift */; };
 		AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2182E72B9FEF03004DC899 /* PluginManagerApp.swift */; };
 		AB2182EA2B9FEF03004DC899 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2182E92B9FEF03004DC899 /* LoginView.swift */; };
 		AB2182EC2B9FEF04004DC899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2182EB2B9FEF04004DC899 /* Assets.xcassets */; };
@@ -48,6 +54,12 @@
 
 /* Begin PBXFileReference section */
 		AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
+		AB12AB362BAD2C54000E8E43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
+		AB12AB3A2BAD2CF9000E8E43 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		AB12AB3F2BAD39C7000E8E43 /* InitialPluginScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPluginScanningView.swift; sourceTree = "<group>"; };
+		AB12AB412BAD3FFA000E8E43 /* AppViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewContainer.swift; sourceTree = "<group>"; };
+		AB12AB432BAD4051000E8E43 /* AppViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewContainerViewModel.swift; sourceTree = "<group>"; };
 		AB2182E42B9FEF03004DC899 /* PluginManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluginManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2182E72B9FEF03004DC899 /* PluginManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginManagerApp.swift; sourceTree = "<group>"; };
 		AB2182E92B9FEF03004DC899 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -100,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB12AB3C2BAD39A0000E8E43 /* InitialPluginScanningView */ = {
+			isa = PBXGroup;
+			children = (
+				AB12AB3F2BAD39C7000E8E43 /* InitialPluginScanningView.swift */,
+			);
+			path = InitialPluginScanningView;
+			sourceTree = "<group>";
+		};
 		AB2182DB2B9FEF02004DC899 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +142,8 @@
 				ABEDD94F2BA62C0E00B316AC /* Info.plist */,
 				ABEDD9242BA60D3F00B316AC /* GoogleService-Info.plist */,
 				AB2182E72B9FEF03004DC899 /* PluginManagerApp.swift */,
+				AB12AB412BAD3FFA000E8E43 /* AppViewContainer.swift */,
+				AB12AB432BAD4051000E8E43 /* AppViewContainerViewModel.swift */,
 				ABEDD9572BA6864800B316AC /* Model */,
 				ABEDD9542BA6860A00B316AC /* Views */,
 				ABEDD9552BA6863C00B316AC /* Services */,
@@ -177,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				ABEDD9582BA686D300B316AC /* OnboardingView */,
+				AB12AB3C2BAD39A0000E8E43 /* InitialPluginScanningView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +207,7 @@
 		ABEDD9552BA6863C00B316AC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AB12AB3A2BAD2CF9000E8E43 /* DatabaseService.swift */,
 				ABEDD9502BA62CB200B316AC /* AuthService.swift */,
 			);
 			path = Services;
@@ -193,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				ABEDD9522BA62CF100B316AC /* AuthServiceProtocol.swift */,
+				AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -200,6 +225,7 @@
 		ABEDD9572BA6864800B316AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB12AB362BAD2C54000E8E43 /* User.swift */,
 				AB2182F62BA0029B004DC899 /* Manufacturer.swift */,
 				AB2182F82BA003DD004DC899 /* Plugin.swift */,
 			);
@@ -358,7 +384,13 @@
 				AB2182EA2B9FEF03004DC899 /* LoginView.swift in Sources */,
 				AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */,
 				AB2182F92BA003DD004DC899 /* Plugin.swift in Sources */,
+				AB12AB372BAD2C54000E8E43 /* User.swift in Sources */,
 				AB2C43802BA7403E005160D2 /* OnboardingViewModel.swift in Sources */,
+				AB12AB3B2BAD2CF9000E8E43 /* DatabaseService.swift in Sources */,
+				AB12AB402BAD39C7000E8E43 /* InitialPluginScanningView.swift in Sources */,
+				AB12AB422BAD3FFA000E8E43 /* AppViewContainer.swift in Sources */,
+				AB12AB442BAD4051000E8E43 /* AppViewContainerViewModel.swift in Sources */,
+				AB12AB392BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift in Sources */,
 				AB2C438C2BA7517B005160D2 /* TextFieldCaption.swift in Sources */,
 				ABEDD9692BA6A84F00B316AC /* ForgotPasswordView.swift in Sources */,
 				AB2182F72BA0029B004DC899 /* Manufacturer.swift in Sources */,

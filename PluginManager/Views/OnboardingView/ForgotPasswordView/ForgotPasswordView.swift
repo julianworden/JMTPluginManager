@@ -28,5 +28,10 @@ struct ForgotPasswordView: View {
 }
 
 #Preview {
-    ForgotPasswordView(viewModel: OnboardingViewModel(authService: AuthService()))
+    ForgotPasswordView(
+        viewModel: OnboardingViewModel(
+            authService: AuthService(),
+            databaseService: DatabaseService()
+        )
+    )
 }
