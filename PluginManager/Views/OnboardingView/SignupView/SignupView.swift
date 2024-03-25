@@ -13,7 +13,7 @@ struct SignupView: View {
     var body: some View {
         VStack(spacing: 10) {
             Text("Sign Up")
-                .font(.largeTitle.bold())
+                .pageTitle()
             
             VStack(alignment: .leading) {
                 TextField("Email Address", text: $viewModel.signupEmailAddress)

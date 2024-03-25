@@ -13,7 +13,7 @@ struct ForgotPasswordView: View {
     var body: some View {
         VStack {
             Text("Forgot Password")
-                .font(.largeTitle.bold())
+                .textFieldCaption()
             
             VStack(alignment: .leading) {
                 TextField("Email Address", text: $viewModel.loginEmailAddress)

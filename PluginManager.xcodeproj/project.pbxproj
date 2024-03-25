@@ -11,7 +11,7 @@
 		AB12AB372BAD2C54000E8E43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB362BAD2C54000E8E43 /* User.swift */; };
 		AB12AB392BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */; };
 		AB12AB3B2BAD2CF9000E8E43 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB3A2BAD2CF9000E8E43 /* DatabaseService.swift */; };
-		AB12AB402BAD39C7000E8E43 /* InitialPluginScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB3F2BAD39C7000E8E43 /* InitialPluginScanningView.swift */; };
+		AB12AB402BAD39C7000E8E43 /* PluginScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB3F2BAD39C7000E8E43 /* PluginScanningView.swift */; };
 		AB12AB422BAD3FFA000E8E43 /* AppViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB412BAD3FFA000E8E43 /* AppViewContainer.swift */; };
 		AB12AB442BAD4051000E8E43 /* AppViewContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB432BAD4051000E8E43 /* AppViewContainerViewModel.swift */; };
 		AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2182E72B9FEF03004DC899 /* PluginManagerApp.swift */; };
@@ -27,6 +27,8 @@
 		AB2C438E2BA75316005160D2 /* TextFieldStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C438D2BA75316005160D2 /* TextFieldStatusView.swift */; };
 		AB2C43912BA75D4D005160D2 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C43902BA75D4D005160D2 /* String+Ext.swift */; };
 		AB2C43952BA7674C005160D2 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C43942BA7674C005160D2 /* Alerts.swift */; };
+		AB6796C12BB0F572008F65ED /* PluginScanningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6796C02BB0F572008F65ED /* PluginScanningViewModel.swift */; };
+		AB6796C52BB0F6EC008F65ED /* PageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6796C42BB0F6EC008F65ED /* PageTitle.swift */; };
 		ABEDD9252BA60D3F00B316AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABEDD9242BA60D3F00B316AC /* GoogleService-Info.plist */; };
 		ABEDD9282BA60E3100B316AC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9272BA60E3100B316AC /* FirebaseAnalytics */; };
 		ABEDD92A2BA60E3100B316AC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9292BA60E3100B316AC /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -57,7 +59,7 @@
 		AB12AB362BAD2C54000E8E43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
 		AB12AB3A2BAD2CF9000E8E43 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
-		AB12AB3F2BAD39C7000E8E43 /* InitialPluginScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPluginScanningView.swift; sourceTree = "<group>"; };
+		AB12AB3F2BAD39C7000E8E43 /* PluginScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginScanningView.swift; sourceTree = "<group>"; };
 		AB12AB412BAD3FFA000E8E43 /* AppViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewContainer.swift; sourceTree = "<group>"; };
 		AB12AB432BAD4051000E8E43 /* AppViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewContainerViewModel.swift; sourceTree = "<group>"; };
 		AB2182E42B9FEF03004DC899 /* PluginManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluginManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,8 @@
 		AB2C438D2BA75316005160D2 /* TextFieldStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStatusView.swift; sourceTree = "<group>"; };
 		AB2C43902BA75D4D005160D2 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		AB2C43942BA7674C005160D2 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		AB6796C02BB0F572008F65ED /* PluginScanningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginScanningViewModel.swift; sourceTree = "<group>"; };
+		AB6796C42BB0F6EC008F65ED /* PageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitle.swift; sourceTree = "<group>"; };
 		ABEDD9242BA60D3F00B316AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABEDD94B2BA6149C00B316AC /* Scratch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scratch.swift; sourceTree = "<group>"; };
 		ABEDD94F2BA62C0E00B316AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -112,12 +116,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB12AB3C2BAD39A0000E8E43 /* InitialPluginScanningView */ = {
+		AB12AB3C2BAD39A0000E8E43 /* PluginScanningView */ = {
 			isa = PBXGroup;
 			children = (
-				AB12AB3F2BAD39C7000E8E43 /* InitialPluginScanningView.swift */,
+				AB12AB3F2BAD39C7000E8E43 /* PluginScanningView.swift */,
+				AB6796C02BB0F572008F65ED /* PluginScanningViewModel.swift */,
 			);
-			path = InitialPluginScanningView;
+			path = PluginScanningView;
 			sourceTree = "<group>";
 		};
 		AB2182DB2B9FEF02004DC899 = {
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				AB2C438B2BA7517B005160D2 /* TextFieldCaption.swift */,
+				AB6796C42BB0F6EC008F65ED /* PageTitle.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -199,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				ABEDD9582BA686D300B316AC /* OnboardingView */,
-				AB12AB3C2BAD39A0000E8E43 /* InitialPluginScanningView */,
+				AB12AB3C2BAD39A0000E8E43 /* PluginScanningView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,14 +386,16 @@
 				ABEDD94C2BA6149C00B316AC /* Scratch.swift in Sources */,
 				ABEDD9532BA62CF100B316AC /* AuthServiceProtocol.swift in Sources */,
 				AB0E48382BA7D5F300B5C3AD /* URL+Ext.swift in Sources */,
+				AB6796C12BB0F572008F65ED /* PluginScanningViewModel.swift in Sources */,
 				AB2C43912BA75D4D005160D2 /* String+Ext.swift in Sources */,
 				AB2182EA2B9FEF03004DC899 /* LoginView.swift in Sources */,
+				AB6796C52BB0F6EC008F65ED /* PageTitle.swift in Sources */,
 				AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */,
 				AB2182F92BA003DD004DC899 /* Plugin.swift in Sources */,
 				AB12AB372BAD2C54000E8E43 /* User.swift in Sources */,
 				AB2C43802BA7403E005160D2 /* OnboardingViewModel.swift in Sources */,
 				AB12AB3B2BAD2CF9000E8E43 /* DatabaseService.swift in Sources */,
-				AB12AB402BAD39C7000E8E43 /* InitialPluginScanningView.swift in Sources */,
+				AB12AB402BAD39C7000E8E43 /* PluginScanningView.swift in Sources */,
 				AB12AB422BAD3FFA000E8E43 /* AppViewContainer.swift in Sources */,
 				AB12AB442BAD4051000E8E43 /* AppViewContainerViewModel.swift in Sources */,
 				AB12AB392BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift in Sources */,

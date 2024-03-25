@@ -13,7 +13,7 @@ struct LoginView: View {
     var body: some View {
         VStack(spacing: 10) {
             Text("Log In")
-                .font(.largeTitle.bold())
+                .pageTitle()
             
             VStack(alignment: .trailing, spacing: 10) {
                 TextField("Email Address", text: $viewModel.loginEmailAddress)

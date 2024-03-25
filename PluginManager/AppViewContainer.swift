@@ -24,13 +24,8 @@ struct AppViewContainer: View {
             switch viewModel.viewState {
             case .determiningIfUserIsSignedIn:
                 ProgressView()
-            case .userIsSignedIn(let user):
-                VStack {
-                    Text("Hello \(user.emailAddress) and \(user.uid)!!!")
-                    Button("LOG OUT") {
-                        try! viewModel.authService.logOut()
-                    }
-                }
+            case .userIsSignedIn(let currentUser):
+                PluginScanningView(currentUser: currentUser)
             case .userIsNotSignedIn:
                 OnboardingView(authService: viewModel.authService, databaseService: viewModel.databaseService)
             }

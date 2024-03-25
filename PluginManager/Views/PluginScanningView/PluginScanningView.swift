@@ -1,5 +1,5 @@
 //
-//  InitialPluginScanningView.swift
+//  PluginScanningView.swift
 //  PluginManager
 //
 //  Created by Julian Worden on 3/21/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InitialPluginScanningView: View {
+struct PluginScanningView: View {
     let currentUser: User
     
     init(currentUser: User) {
@@ -15,10 +15,11 @@ struct InitialPluginScanningView: View {
     }
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Scan Your Plugins")
+            .pageTitle()
     }
 }
 
 #Preview {
-    InitialPluginScanningView(currentUser: User.example)
+    PluginScanningView(currentUser: User.example)
 }
