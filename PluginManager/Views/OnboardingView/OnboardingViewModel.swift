@@ -99,7 +99,14 @@ final class OnboardingViewModel: ObservableObject {
             }
             
             let signupResult = try await authService.signUp(withEmail: signupEmailAddress, andPassword: signupPassword)
-            let newUser = User(uid: signupResult.user.uid, emailAddress: signupEmailAddress)
+            
+            let macosVersion = ProcessInfo.processInfo.operatingSystemVersion
+            let macosVersionAsString = "\(macosVersion.majorVersion).\(macosVersion.minorVersion).\(macosVersion.patchVersion)"
+            let newUser = User(
+                uid: signupResult.user.uid,
+                emailAddress: signupEmailAddress,
+                macosVersion: macosVersionAsString
+            )
             
             try databaseService.createUser(newUser)
         } catch {
