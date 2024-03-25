@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AB03D6422BB22961001D3B50 /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03D6412BB22961001D3B50 /* FileManagerError.swift */; };
 		AB03D6442BB22C65001D3B50 /* InstalledPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03D6432BB22C65001D3B50 /* InstalledPlugin.swift */; };
+		AB03D6492BB230DD001D3B50 /* RecognizedPluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03D6482BB230DD001D3B50 /* RecognizedPluginsView.swift */; };
+		AB03D64B2BB231BF001D3B50 /* StartPluginScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03D64A2BB231BF001D3B50 /* StartPluginScanView.swift */; };
 		AB0E48382BA7D5F300B5C3AD /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */; };
 		AB12AB372BAD2C54000E8E43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB362BAD2C54000E8E43 /* User.swift */; };
 		AB12AB392BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */; };
@@ -59,6 +61,8 @@
 /* Begin PBXFileReference section */
 		AB03D6412BB22961001D3B50 /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
 		AB03D6432BB22C65001D3B50 /* InstalledPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledPlugin.swift; sourceTree = "<group>"; };
+		AB03D6482BB230DD001D3B50 /* RecognizedPluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedPluginsView.swift; sourceTree = "<group>"; };
+		AB03D64A2BB231BF001D3B50 /* StartPluginScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPluginScanView.swift; sourceTree = "<group>"; };
 		AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		AB12AB362BAD2C54000E8E43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
@@ -128,11 +132,29 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		AB03D6462BB23089001D3B50 /* StartPluginScanView */ = {
+			isa = PBXGroup;
+			children = (
+				AB03D64A2BB231BF001D3B50 /* StartPluginScanView.swift */,
+			);
+			path = StartPluginScanView;
+			sourceTree = "<group>";
+		};
+		AB03D6472BB23098001D3B50 /* RecognizedPluginsView */ = {
+			isa = PBXGroup;
+			children = (
+				AB03D6482BB230DD001D3B50 /* RecognizedPluginsView.swift */,
+			);
+			path = RecognizedPluginsView;
+			sourceTree = "<group>";
+		};
 		AB12AB3C2BAD39A0000E8E43 /* PluginScanningView */ = {
 			isa = PBXGroup;
 			children = (
 				AB12AB3F2BAD39C7000E8E43 /* PluginScanningView.swift */,
 				AB6796C02BB0F572008F65ED /* PluginScanningViewModel.swift */,
+				AB03D6462BB23089001D3B50 /* StartPluginScanView */,
+				AB03D6472BB23098001D3B50 /* RecognizedPluginsView */,
 			);
 			path = PluginScanningView;
 			sourceTree = "<group>";
@@ -406,6 +428,7 @@
 			files = (
 				ABEDD94C2BA6149C00B316AC /* Scratch.swift in Sources */,
 				ABEDD9532BA62CF100B316AC /* AuthServiceProtocol.swift in Sources */,
+				AB03D64B2BB231BF001D3B50 /* StartPluginScanView.swift in Sources */,
 				AB0E48382BA7D5F300B5C3AD /* URL+Ext.swift in Sources */,
 				AB6796C12BB0F572008F65ED /* PluginScanningViewModel.swift in Sources */,
 				AB6796CF2BB10F3F008F65ED /* Constants.swift in Sources */,
@@ -433,6 +456,7 @@
 				ABEDD9612BA69FC700B316AC /* SignupView.swift in Sources */,
 				AB2C43952BA7674C005160D2 /* Alerts.swift in Sources */,
 				ABEDD9512BA62CB200B316AC /* AuthService.swift in Sources */,
+				AB03D6492BB230DD001D3B50 /* RecognizedPluginsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,8 @@ import Foundation
 @MainActor
 final class PluginScanningViewModel: ObservableObject {
     enum ViewState {
-        case displayingView
+        case displayingStartPluginScanView
+        case displayingRecognizedPluginsView
         case scanningVSTPlugins
         case scanningVST3Plugins
         case scanningAUPlugins
@@ -18,8 +19,7 @@ final class PluginScanningViewModel: ObservableObject {
         case error(message: String)
     }
     
-    @Published var viewState = ViewState.displayingView
-    
+    @Published var viewState = ViewState.displayingStartPluginScanView
     @Published var scannedVSTPluginNames = [String]()
     @Published var vstPluginsHaveBeenScanned = false
     @Published var vst3PluginsHaveBeenScanned = false
@@ -35,8 +35,10 @@ final class PluginScanningViewModel: ObservableObject {
         self.authService = authService
     }
     
-    func beginPluginScan() {
+    func scanPlugins() {
         scanVSTPlugins()
+        
+        viewState = .displayingRecognizedPluginsView
     }
     
     private func scanVSTPlugins() {
