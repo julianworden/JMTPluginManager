@@ -10,8 +10,9 @@ import Foundation
 struct User: Codable {
     /// The name of the collection that stores users in Firestore
     static let collectionName = "users"
-    static let example = User(uid: "exampleuid", emailAddress: "example@example.com")
+    static let example = User(uid: "exampleuid", emailAddress: "example@example.com", macOSVersion: "14.0")
     
     let uid: String
     let emailAddress: String
+    let macOSVersion: String
 }

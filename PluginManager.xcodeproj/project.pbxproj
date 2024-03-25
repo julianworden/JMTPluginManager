@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB03D6422BB22961001D3B50 /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03D6412BB22961001D3B50 /* FileManagerError.swift */; };
+		AB03D6442BB22C65001D3B50 /* InstalledPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03D6432BB22C65001D3B50 /* InstalledPlugin.swift */; };
 		AB0E48382BA7D5F300B5C3AD /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */; };
 		AB12AB372BAD2C54000E8E43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB362BAD2C54000E8E43 /* User.swift */; };
 		AB12AB392BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		AB03D6412BB22961001D3B50 /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
+		AB03D6432BB22C65001D3B50 /* InstalledPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledPlugin.swift; sourceTree = "<group>"; };
 		AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		AB12AB362BAD2C54000E8E43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				AB12AB362BAD2C54000E8E43 /* User.swift */,
 				AB2182F62BA0029B004DC899 /* Manufacturer.swift */,
 				AB2182F82BA003DD004DC899 /* Plugin.swift */,
+				AB03D6432BB22C65001D3B50 /* InstalledPlugin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				AB2C43912BA75D4D005160D2 /* String+Ext.swift in Sources */,
 				AB2182EA2B9FEF03004DC899 /* LoginView.swift in Sources */,
 				AB6796C52BB0F6EC008F65ED /* PageTitle.swift in Sources */,
+				AB03D6442BB22C65001D3B50 /* InstalledPlugin.swift in Sources */,
 				AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */,
 				AB2182F92BA003DD004DC899 /* Plugin.swift in Sources */,
 				AB03D6422BB22961001D3B50 /* FileManagerError.swift in Sources */,

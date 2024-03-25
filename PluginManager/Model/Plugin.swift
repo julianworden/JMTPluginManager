@@ -9,10 +9,10 @@ struct Plugin: Codable {
     /// The name of the collection that stores plugins in Firestore
     static let collectionName = "plugins"
     
+    /// The plugin's document ID.
     let id: String
+    /// The name of the plugin, not including any file extensions.
     let name: String
-    let vst3FileName: String?
-    let auFileName: String?
-    let aaxFileName: String?
-    let manufacturer: Manufacturer
+    /// The name of the plugin's manufacturer.
+    let manufacturerName: String
 }
