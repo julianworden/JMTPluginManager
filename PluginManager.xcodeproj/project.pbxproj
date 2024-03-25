@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB03D6422BB22961001D3B50 /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03D6412BB22961001D3B50 /* FileManagerError.swift */; };
 		AB0E48382BA7D5F300B5C3AD /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */; };
 		AB12AB372BAD2C54000E8E43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB362BAD2C54000E8E43 /* User.swift */; };
 		AB12AB392BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */; };
@@ -45,7 +46,7 @@
 		ABEDD9462BA60E3100B316AC /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9452BA60E3100B316AC /* FirebaseRemoteConfig */; };
 		ABEDD9482BA60E3100B316AC /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9472BA60E3100B316AC /* FirebaseRemoteConfigSwift */; };
 		ABEDD94A2BA60E3100B316AC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9492BA60E3100B316AC /* FirebaseStorage */; };
-		ABEDD94C2BA6149C00B316AC /* Scratch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDD94B2BA6149C00B316AC /* Scratch.swift */; };
+		ABEDD94C2BA6149C00B316AC /* Scratch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDD94B2BA6149C00B316AC /* Scratch.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		ABEDD9512BA62CB200B316AC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDD9502BA62CB200B316AC /* AuthService.swift */; };
 		ABEDD9532BA62CF100B316AC /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDD9522BA62CF100B316AC /* AuthServiceProtocol.swift */; };
 		ABEDD95D2BA69D9100B316AC /* ErrorMessageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDD95C2BA69D9100B316AC /* ErrorMessageConstants.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB03D6412BB22961001D3B50 /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
 		AB0E48372BA7D5F300B5C3AD /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		AB12AB362BAD2C54000E8E43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB12AB382BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB03D6402BB2295C001D3B50 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				AB03D6412BB22961001D3B50 /* FileManagerError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		AB12AB3C2BAD39A0000E8E43 /* PluginScanningView */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 				AB2C438A2BA7516C005160D2 /* ViewModifiers */,
 				ABEDD95B2BA69D7F00B316AC /* Utilities */,
 				AB2182EB2B9FEF04004DC899 /* Assets.xcassets */,
+				AB03D6402BB2295C001D3B50 /* Errors */,
 				AB2182F02B9FEF04004DC899 /* PluginManager.entitlements */,
 				AB2182ED2B9FEF04004DC899 /* Preview Content */,
 			);
@@ -400,6 +411,7 @@
 				AB6796C52BB0F6EC008F65ED /* PageTitle.swift in Sources */,
 				AB2182E82B9FEF03004DC899 /* PluginManagerApp.swift in Sources */,
 				AB2182F92BA003DD004DC899 /* Plugin.swift in Sources */,
+				AB03D6422BB22961001D3B50 /* FileManagerError.swift in Sources */,
 				AB12AB372BAD2C54000E8E43 /* User.swift in Sources */,
 				AB2C43802BA7403E005160D2 /* OnboardingViewModel.swift in Sources */,
 				AB12AB3B2BAD2CF9000E8E43 /* DatabaseService.swift in Sources */,

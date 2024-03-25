@@ -120,31 +120,31 @@ struct Scratch: View {
             
             
             // CHOOSE INDIVIDUAL FILE
-    //            Text(filename)
-    //            Button("select File") {
-    //                let panel = NSOpenPanel()
-    //                panel.allowsMultipleSelection = false
-    //                panel.canChooseDirectories = false
-    //                if panel.runModal() == .OK {
-    //                    // GET DATE ADDED STRING FOR FILE SELECTED
-    //                    let path = panel.url!.path()
-    //                    if let mdItem = MDItemCreateWithURL(nil, panel.url! as CFURL),
-    //                       let mdNames = MDItemCopyAttributeNames(mdItem),
-    //                       let mdAttrs = MDItemCopyAttributes(mdItem, mdNames) as? [String: Any] {
-    //                        print("ATTRIBUTES \(mdAttrs)")
-    //                        let dateFormatter = DateFormatter()
-    //                        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-    //                        let dateAdded = mdAttrs[kMDItemDateAdded as String] ?? "Unknown"
-    //                        let version = mdAttrs[kMDItemEXIFGPSVersion as String]
-    //                        print("VERSION: \(version)")
-    //                        let dateAddedAsDate = dateAdded as? Date
-    //                        let dateAddedAsString = dateFormatter.string(from: dateAddedAsDate!)
-    //                        print("DATE ADDED: \(dateAddedAsString)")
-    //                    } else {
-    //                        print("CAN't Get attributes for \(path)")
-    //                    }
-    //                }
-    //            }
+                Text(filename)
+                Button("select File") {
+                    let panel = NSOpenPanel()
+                    panel.allowsMultipleSelection = false
+                    panel.canChooseDirectories = false
+                    if panel.runModal() == .OK {
+                        // GET DATE ADDED STRING FOR FILE SELECTED
+                        let path = panel.url!.path
+                        if let mdItem = MDItemCreateWithURL(nil, panel.url! as CFURL),
+                           let mdNames = MDItemCopyAttributeNames(mdItem),
+                           let mdAttrs = MDItemCopyAttributes(mdItem, mdNames) as? [String: Any] {
+                            print("ATTRIBUTES \(mdAttrs)")
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+                            let dateAdded = mdAttrs[kMDItemDateAdded as String] ?? "Unknown"
+                            let version = mdAttrs[kMDItemEXIFGPSVersion as String]
+                            print("VERSION: \(version)")
+                            let dateAddedAsDate = dateAdded as? Date
+                            let dateAddedAsString = dateFormatter.string(from: dateAddedAsDate!)
+                            print("DATE ADDED: \(dateAddedAsString)")
+                        } else {
+                            print("CAN't Get attributes for \(path)")
+                        }
+                    }
+                }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

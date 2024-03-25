@@ -50,7 +50,7 @@ struct PluginScanningView: View {
             )
             
             Button {
-                
+                viewModel.beginPluginScan()
             } label: {
                 Text("Start Scan")
                     .frame(
@@ -61,7 +61,13 @@ struct PluginScanningView: View {
             .buttonStyle(.borderedProminent)
             
             Button {
-                // TODO: Select Custom Location
+                let panel = NSOpenPanel()
+                panel.allowsMultipleSelection = false
+                panel.canChooseDirectories = false
+                if panel.runModal() == .OK {
+                    // TODO: Make this work
+                    print(panel.urls[0])
+                }
             } label: {
                 Text("Select Custom Location")
                     .frame(
