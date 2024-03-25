@@ -25,9 +25,16 @@ struct AppViewContainer: View {
             case .determiningIfUserIsSignedIn:
                 ProgressView()
             case .userIsSignedIn(let currentUser):
-                PluginScanningView(currentUser: currentUser)
+                PluginScanningView(
+                    currentUser: currentUser,
+                    databaseService: viewModel.databaseService,
+                    authService: viewModel.authService
+                )
             case .userIsNotSignedIn:
-                OnboardingView(authService: viewModel.authService, databaseService: viewModel.databaseService)
+                OnboardingView(
+                    authService: viewModel.authService,
+                    databaseService: viewModel.databaseService
+                )
             }
         }
         .task {

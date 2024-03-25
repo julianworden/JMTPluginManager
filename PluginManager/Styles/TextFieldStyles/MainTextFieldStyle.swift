@@ -13,7 +13,7 @@ struct MainTextFieldStyle: TextFieldStyle {
             .frame(height: 41)
             .textFieldStyle(PlainTextFieldStyle())
             .padding([.horizontal], 15)
-            .background(Color.white)
+            .background(.mainTextFieldBackground)
             .cornerRadius(11)
     }
 }

@@ -30,12 +30,15 @@ struct LoginView: View {
                 }
                 .buttonStyle(.plain)
                 
-                Button("Log In") {
+                Button {
                     Task {
                         await viewModel.logIn()
                     }
+                } label: {
+                    Text("Log In")
+                        .frame(maxWidth: .infinity, minHeight: Constants.UI.largeButtonMinHeight)
                 }
-                .buttonStyle(PrimaryButtonStyle())
+                .buttonStyle(.borderedProminent)
                 
                 Button {
                     viewModel.mode = .signup

@@ -62,12 +62,15 @@ struct SignupView: View {
                 )
             }
             
-            Button("Sign Up") {
+            Button {
                 Task {
                     await viewModel.createAccount()
                 }
+            } label: {
+                Text("Sign Up")
+                    .frame(maxWidth: .infinity, minHeight: Constants.UI.largeButtonMinHeight)
             }
-            .buttonStyle(PrimaryButtonStyle())
+            .buttonStyle(.borderedProminent)
         }
         .padding(50)
     }
