@@ -20,6 +20,7 @@ struct PluginScanningView: View {
         self.currentUser = currentUser
         _viewModel = StateObject(
             wrappedValue: PluginScanningViewModel(
+                currentUser: currentUser,
                 databaseService: databaseService,
                 authService: authService
             )
@@ -29,10 +30,7 @@ struct PluginScanningView: View {
     var body: some View {
         switch viewModel.viewState {
         case .displayingStartPluginScanView,
-             .scanningAAXPlugins,
-             .scanningAUPlugins,
-             .scanningVSTPlugins,
-             .scanningVST3Plugins,
+             .scanningPlugins,
              .error(_):
             StartPluginScanView(viewModel: viewModel)
         case .displayingRecognizedPluginsView:

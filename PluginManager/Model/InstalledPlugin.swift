@@ -11,7 +11,7 @@ struct InstalledPlugin: Codable {
     
     /// The plugin's document ID in the `installedPlugins` collection as
     /// well as the document ID of the plugin in the `plugins` collection.
-    let id: String
+    var id: String
     /// The name of the plugin, including the file extension.
     let name: String
     /// The version of the plugin that is installed on the user's computer.

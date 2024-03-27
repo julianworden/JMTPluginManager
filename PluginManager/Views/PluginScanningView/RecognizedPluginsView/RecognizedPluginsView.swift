@@ -26,6 +26,7 @@ struct RecognizedPluginsView: View {
 #Preview {
     RecognizedPluginsView(
         viewModel: PluginScanningViewModel(
+            currentUser: User.example,
             databaseService: DatabaseService(),
             authService: AuthService()
         )

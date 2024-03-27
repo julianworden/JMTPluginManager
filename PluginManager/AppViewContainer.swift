@@ -23,7 +23,10 @@ struct AppViewContainer: View {
         Group {
             switch viewModel.viewState {
             case .determiningIfUserIsSignedIn:
-                ProgressView()
+                OnboardingView(
+                    authService: viewModel.authService,
+                    databaseService: viewModel.databaseService
+                )
             case .userIsSignedIn(let currentUser):
                 PluginScanningView(
                     currentUser: currentUser,
@@ -36,6 +39,9 @@ struct AppViewContainer: View {
                     databaseService: viewModel.databaseService
                 )
             }
+        }
+        .toolbar {
+            Button("LOG OUT") { try! viewModel.authService.logOut() }
         }
         .task {
             await viewModel.determineIfUserIsSignedIn()

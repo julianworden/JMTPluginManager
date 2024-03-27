@@ -34,7 +34,9 @@ struct StartPluginScanView: View {
             )
             
             Button {
-                viewModel.scanPlugins()
+                Task {
+                    await viewModel.scanPlugins()
+                }
             } label: {
                 Text("Start Scan")
                     .frame(
@@ -59,11 +61,6 @@ struct StartPluginScanView: View {
                         minHeight: Constants.UI.largeButtonMinHeight
                     )
             }
-            
-            Button("LOG OUT") {
-                try! viewModel.authService.logOut()
-            }
-            
         }
         .padding(50)
     }
@@ -72,6 +69,7 @@ struct StartPluginScanView: View {
 #Preview {
     StartPluginScanView(
         viewModel: PluginScanningViewModel(
+            currentUser: User.example,
             databaseService: DatabaseService(),
             authService: AuthService()
         )

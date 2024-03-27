@@ -44,4 +44,13 @@ extension URL {
         }
         return size
     }
+    
+    /// The name of the plugin file at a given URL, not including the plugin's file extension. For
+    /// example, in `"Fresh Air.vst"`, this property will only return `"Fresh Air"`.
+    /// Returns `""Plugin Name Not Found"` if there is no plugin at the give URL.
+    var pluginName: String {
+        guard self.lastPathComponent.isPluginName else { return "Plugin Name Not Found" }
+        
+        return self.lastPathComponent.pluginNameWithoutFileExtension
+    }
 }
