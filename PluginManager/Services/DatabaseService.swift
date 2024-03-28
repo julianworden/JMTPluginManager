@@ -108,4 +108,19 @@ final class DatabaseService: DatabaseServiceProtocol {
             // TODO: Handle Error
         }
     }
+    
+    // MARK: - Admin
+    
+    func adminCreateManufacturer(_ manufacturer: Manufacturer) async throws {
+        do {
+            let documentReference = try firestore
+                .collection(Manufacturer.collectionName)
+                .addDocument(from: manufacturer)
+            
+            try await documentReference.updateData([Constants.FirestoreFields.id: documentReference.documentID])
+        } catch {
+            throw error
+            // TODO: Handle Error
+        }
+    }
 }

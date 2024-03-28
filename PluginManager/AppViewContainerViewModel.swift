@@ -10,7 +10,11 @@ import Foundation
 @MainActor
 final class AppViewContainerViewModel: ObservableObject {
     enum ViewState {
-        case determiningIfUserIsSignedIn, userIsSignedIn(user: User), userIsNotSignedIn
+        case determiningIfUserIsSignedIn
+        case userIsSignedIn(user: User)
+        case userIsNotSignedIn
+        case addPluginsToDatabase
+        case addManufacturerToDatabase
     }
     
     @Published var viewState = ViewState.determiningIfUserIsSignedIn

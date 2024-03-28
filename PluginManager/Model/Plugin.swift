@@ -13,6 +13,6 @@ struct Plugin: Codable {
     let id: String
     /// The name of the plugin, not including any file extensions.
     let name: String
-    /// The name of the plugin's manufacturer.
-    let manufacturerName: String
+    /// The plug-in manufacturer's key.
+    let manufacturerKey: String
 }

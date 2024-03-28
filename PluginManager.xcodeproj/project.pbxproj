@@ -35,6 +35,10 @@
 		AB6796C12BB0F572008F65ED /* PluginScanningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6796C02BB0F572008F65ED /* PluginScanningViewModel.swift */; };
 		AB6796C52BB0F6EC008F65ED /* PageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6796C42BB0F6EC008F65ED /* PageTitle.swift */; };
 		AB6796CF2BB10F3F008F65ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6796CE2BB10F3F008F65ED /* Constants.swift */; };
+		ABA067602BB4DDCD00FEDB6F /* AdminAddPluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA0675F2BB4DDCD00FEDB6F /* AdminAddPluginsView.swift */; };
+		ABA067642BB4DFF400FEDB6F /* AdminAddManufacturerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA067632BB4DFF400FEDB6F /* AdminAddManufacturerView.swift */; };
+		ABA067662BB4DFFE00FEDB6F /* AdminAddPluginsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA067652BB4DFFE00FEDB6F /* AdminAddPluginsViewModel.swift */; };
+		ABA067682BB4E01100FEDB6F /* AdminAddManufacturerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA067672BB4E01100FEDB6F /* AdminAddManufacturerViewModel.swift */; };
 		ABEDD9252BA60D3F00B316AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABEDD9242BA60D3F00B316AC /* GoogleService-Info.plist */; };
 		ABEDD9282BA60E3100B316AC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9272BA60E3100B316AC /* FirebaseAnalytics */; };
 		ABEDD92A2BA60E3100B316AC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = ABEDD9292BA60E3100B316AC /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -91,6 +95,10 @@
 		AB6796C02BB0F572008F65ED /* PluginScanningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginScanningViewModel.swift; sourceTree = "<group>"; };
 		AB6796C42BB0F6EC008F65ED /* PageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitle.swift; sourceTree = "<group>"; };
 		AB6796CE2BB10F3F008F65ED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ABA0675F2BB4DDCD00FEDB6F /* AdminAddPluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAddPluginsView.swift; sourceTree = "<group>"; };
+		ABA067632BB4DFF400FEDB6F /* AdminAddManufacturerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAddManufacturerView.swift; sourceTree = "<group>"; };
+		ABA067652BB4DFFE00FEDB6F /* AdminAddPluginsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAddPluginsViewModel.swift; sourceTree = "<group>"; };
+		ABA067672BB4E01100FEDB6F /* AdminAddManufacturerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAddManufacturerViewModel.swift; sourceTree = "<group>"; };
 		ABEDD9242BA60D3F00B316AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABEDD94B2BA6149C00B316AC /* Scratch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scratch.swift; sourceTree = "<group>"; };
 		ABEDD94F2BA62C0E00B316AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -249,11 +257,39 @@
 			path = TextFieldStyles;
 			sourceTree = "<group>";
 		};
+		ABA0675E2BB4DCB100FEDB6F /* AdminViews */ = {
+			isa = PBXGroup;
+			children = (
+				ABA067612BB4DFD600FEDB6F /* AdminAddPluginsView */,
+				ABA067622BB4DFE100FEDB6F /* AdminAddManufacturerView */,
+			);
+			path = AdminViews;
+			sourceTree = "<group>";
+		};
+		ABA067612BB4DFD600FEDB6F /* AdminAddPluginsView */ = {
+			isa = PBXGroup;
+			children = (
+				ABA0675F2BB4DDCD00FEDB6F /* AdminAddPluginsView.swift */,
+				ABA067652BB4DFFE00FEDB6F /* AdminAddPluginsViewModel.swift */,
+			);
+			path = AdminAddPluginsView;
+			sourceTree = "<group>";
+		};
+		ABA067622BB4DFE100FEDB6F /* AdminAddManufacturerView */ = {
+			isa = PBXGroup;
+			children = (
+				ABA067632BB4DFF400FEDB6F /* AdminAddManufacturerView.swift */,
+				ABA067672BB4E01100FEDB6F /* AdminAddManufacturerViewModel.swift */,
+			);
+			path = AdminAddManufacturerView;
+			sourceTree = "<group>";
+		};
 		ABEDD9542BA6860A00B316AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				ABEDD9582BA686D300B316AC /* OnboardingView */,
 				AB12AB3C2BAD39A0000E8E43 /* PluginScanningView */,
+				ABA0675E2BB4DCB100FEDB6F /* AdminViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -439,6 +475,7 @@
 				AB6796C12BB0F572008F65ED /* PluginScanningViewModel.swift in Sources */,
 				AB4D4EF22BB4C55E00E7A2FC /* PluginFormat.swift in Sources */,
 				AB4D4EF42BB4D04900E7A2FC /* Array+Ext.swift in Sources */,
+				ABA067602BB4DDCD00FEDB6F /* AdminAddPluginsView.swift in Sources */,
 				AB6796CF2BB10F3F008F65ED /* Constants.swift in Sources */,
 				AB2C43912BA75D4D005160D2 /* String+Ext.swift in Sources */,
 				AB2182EA2B9FEF03004DC899 /* LoginView.swift in Sources */,
@@ -448,11 +485,14 @@
 				AB2182F92BA003DD004DC899 /* Plugin.swift in Sources */,
 				AB03D6422BB22961001D3B50 /* FileManagerError.swift in Sources */,
 				AB12AB372BAD2C54000E8E43 /* User.swift in Sources */,
+				ABA067662BB4DFFE00FEDB6F /* AdminAddPluginsViewModel.swift in Sources */,
 				AB2C43802BA7403E005160D2 /* OnboardingViewModel.swift in Sources */,
 				AB12AB3B2BAD2CF9000E8E43 /* DatabaseService.swift in Sources */,
 				AB12AB402BAD39C7000E8E43 /* PluginScanningView.swift in Sources */,
 				AB12AB422BAD3FFA000E8E43 /* AppViewContainer.swift in Sources */,
 				AB12AB442BAD4051000E8E43 /* AppViewContainerViewModel.swift in Sources */,
+				ABA067642BB4DFF400FEDB6F /* AdminAddManufacturerView.swift in Sources */,
+				ABA067682BB4E01100FEDB6F /* AdminAddManufacturerViewModel.swift in Sources */,
 				AB12AB392BAD2CE7000E8E43 /* DatabaseServiceProtocol.swift in Sources */,
 				AB2C438C2BA7517B005160D2 /* TextFieldCaption.swift in Sources */,
 				ABEDD9692BA6A84F00B316AC /* ForgotPasswordView.swift in Sources */,

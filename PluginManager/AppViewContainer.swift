@@ -23,25 +23,45 @@ struct AppViewContainer: View {
         Group {
             switch viewModel.viewState {
             case .determiningIfUserIsSignedIn:
-                OnboardingView(
-                    authService: viewModel.authService,
-                    databaseService: viewModel.databaseService
-                )
+                ProgressView()
             case .userIsSignedIn(let currentUser):
                 PluginScanningView(
                     currentUser: currentUser,
                     databaseService: viewModel.databaseService,
                     authService: viewModel.authService
                 )
+                
             case .userIsNotSignedIn:
                 OnboardingView(
                     authService: viewModel.authService,
                     databaseService: viewModel.databaseService
                 )
+                
+            case .addPluginsToDatabase:
+                AdminAddPluginsView(
+                    databaseService: viewModel.databaseService,
+                    authService: viewModel.authService
+                )
+                
+            case .addManufacturerToDatabase:
+                AdminAddManufacturerView(
+                    databaseService: viewModel.databaseService,
+                    authService: viewModel.authService
+                )
             }
         }
         .toolbar {
-            Button("LOG OUT") { try! viewModel.authService.logOut() }
+            ToolbarItemGroup {
+                Button("LOG OUT") { try! viewModel.authService.logOut() }
+                
+                if let currentUser = viewModel.authService.getCurrentUser(),
+                   let currentUserEmail = currentUser.email,
+                   // TODO: Don't hard code this
+                   currentUserEmail == "julianworden@gmail.com" {
+                    Button("ADD PLUG-INS") { viewModel.viewState = .addPluginsToDatabase }
+                    Button("ADD MANUFACTURER") { viewModel.viewState = .addManufacturerToDatabase }
+                }
+            }
         }
         .task {
             await viewModel.determineIfUserIsSignedIn()

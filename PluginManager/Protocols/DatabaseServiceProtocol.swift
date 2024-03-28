@@ -21,4 +21,6 @@ protocol DatabaseServiceProtocol {
         withNewFormat newFormat: String,
         forUser user: User
     ) async throws
+    
+    func adminCreateManufacturer(_ manufacturer: Manufacturer) async throws
 }

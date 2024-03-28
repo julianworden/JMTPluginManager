@@ -10,9 +10,12 @@ import Foundation
 extension String {
     /// Whether or not a given string is empty after removing all white spaces and new lines.
     var isReallyEmpty: Bool {
-        return self.filter {
-            !$0.isWhitespace && !$0.isNewline
-        }.isEmpty
+        return self.filter { !$0.isWhitespace && !$0.isNewline }.isEmpty
+    }
+    
+    /// A version of a given string without any white spaces or new lines.
+    var trimmed: String {
+        return self.filter { !$0.isWhitespace && !$0.isNewline }
     }
     
     /// Returns the name of a plugin within a given string. Returns `self` if
